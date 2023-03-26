@@ -1,16 +1,28 @@
-/*⚠️ NO MODIFIQUES EL NOMBRE DE LAS DECLARACIONES ⚠️*/
+﻿/*⚠️ NO MODIFIQUES EL NOMBRE DE LAS DECLARACIONES ⚠️*/
 
 function mayuscula(nombre) {
    // Esta función recibe un nombre (string).
    // Debe devolver el mismo nombre, pero con la primera letra en mayúscula.
    // [Ejemplo]: "mario" ----> "Mario".
    // Tu código:
+    let name = nombre.split("")
+    let nameO = name[0].toUpperCase()
+    let shift = name.shift()
+    name.unshift(nameO)
+    return name.join("")
+   
 }
 
 function invocarCallback(cb) {
    // Invoca/ejecuta el callback `cb`.
    // [NOTA]: no debes reotrnar nada.
    // Tu código:
+
+   
+  cb();
+
+
+   
 }
 
 function operacionMatematica(num1, num2, cb) {
@@ -18,6 +30,10 @@ function operacionMatematica(num1, num2, cb) {
    // El callback realiza una operación matemática, por lo que necesita de los dos números.
    // Retorna el resultado del callback pasándole como parámetros los números.
    // Tu código:
+
+
+
+
 }
 
 function sumarArray(arrayOfNumbers, cb) {
@@ -26,6 +42,14 @@ function sumarArray(arrayOfNumbers, cb) {
    // Este resultado debes pasárselo como argumento al callback recibido.
    // [NOTA]: no debes reotrnar nada.
    // Tu código:
+
+
+  const suma = arrayOfNumbers.reduce((acc, curr) => acc + curr, 0);
+  cb(suma);
+
+
+
+
 }
 
 function forEach(array, cb) {
@@ -33,6 +57,14 @@ function forEach(array, cb) {
    // Debes iterar sobre el arreglo, y por cada elemento ejecutar el callback.
    // Debes pasarle el elemento como argumento al callback.
    // Tu código:
+
+
+  for (let i = 0; i < array.length; i++) {
+    cb(array[i]);
+  }
+
+
+
 }
 
 function map(array, cb) {
@@ -40,6 +72,19 @@ function map(array, cb) {
    // Tiene que guardar el resultado devuelto por el callback en cada elemento dentro de un nuevo arreglo.
    // Retorna el nuevo arreglo.
    // Tu código:
+
+
+  const newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    const result = cb(array[i]);
+    newArray.push(result);
+  }
+  return newArray;
+
+
+
+
+
 }
 
 function filter(arrayOfStrings) {
